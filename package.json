@@ -1,6 +1,6 @@
 {
   "name": "react-native-play-store-in-app-review",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Use the new Google Play Store in-app review API in your React Native app ! ",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
