@@ -11,11 +11,7 @@ Pod::Spec.new do |s|
   s.authors      = package["author"]
 
   s.platforms    = { :ios => "9.0" }
-  s.source       = { :git => "https://github.com/lucienbl/react-native-play-store-in-app-review.git", :tag => "#{s.version}" }
-
-  
-  s.source_files = "ios/**/*.{h,m,mm,swift}"
-  
+  s.source       = { :git => "https://github.com/lucienbl/react-native-play-store-in-app-review.git", :tag => "#{s.version}" }  
 
   s.dependency "React"
 end
