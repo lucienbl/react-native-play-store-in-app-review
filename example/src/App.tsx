@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { StyleSheet, View, Button } from 'react-native';
+import { StyleSheet, View, Button, Platform } from 'react-native';
 import PlayStoreInAppReview from 'react-native-play-store-in-app-review';
 
 export default function App() {
@@ -9,7 +9,9 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Button title="Review App" onPress={startPlayStoreReview} />
+      {Platform.OS === 'android' && (
+        <Button title="Review App" onPress={startPlayStoreReview} />
+      )}
     </View>
   );
 }
