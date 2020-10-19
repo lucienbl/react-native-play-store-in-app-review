@@ -1,7 +1,7 @@
 import { NativeModules } from 'react-native';
 
 type PlayStoreInAppReviewType = {
-  startInAppReview(): Promise<any>;
+  startInAppReview(useFakeReviewManager?: boolean): Promise<any>;
 };
 
 const { PlayStoreInAppReview } = NativeModules;

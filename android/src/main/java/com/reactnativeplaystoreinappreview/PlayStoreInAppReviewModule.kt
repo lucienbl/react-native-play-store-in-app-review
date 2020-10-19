@@ -1,6 +1,5 @@
 package com.reactnativeplaystoreinappreview
 
-import android.util.Log
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.bridge.ReactContextBaseJavaModule
 import com.facebook.react.bridge.ReactMethod
@@ -17,8 +16,12 @@ class PlayStoreInAppReviewModule(reactContext: ReactApplicationContext) : ReactC
     }
 
     @ReactMethod
-    fun startInAppReview(promise: Promise) {
-      val manager = ReviewManagerFactory.create(reactApplicationContext)
+    fun startInAppReview(useFakeReviewManager: Boolean, promise: Promise) {
+      val manager = if (useFakeReviewManager)
+                      FakeReviewManager(reactApplicationContext)
+                    else
+                      ReviewManagerFactory.create(reactApplicationContext)
+
       val request = manager.requestReviewFlow()
 
       request.addOnCompleteListener { request ->

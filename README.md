@@ -16,7 +16,9 @@ import PlayStoreInAppReview from "react-native-play-store-in-app-review";
 
 // start app review process
 
-await PlayStoreInAppReview.startInAppReview();
+const useFakeReviewManager = __DEV__;
+
+await PlayStoreInAppReview.startInAppReview(useFakeReviewManager);
 ```
 
 ## Test the integration
